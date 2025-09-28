@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="fr" xmlns="http://www.w3.org/1999/html">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>EPO CAR — Resin Cars & Décoration</title>
+<style>
+:root {
+  --bg: #070707;
+  --card: linear-gradient(180deg,#0b0b0b, #0f0f12);
+  --accent: #c67bff;
+  --accent-2: #7bd3ff;
+  --muted: #aeb0c0;
+  --glass: rgba(255,255,255,0.04);
+}
+* {box-sizing: border-box;}
+body {
+  margin:0;
+  font-family: Inter, "Segoe UI", Roboto, Arial, sans-serif;
+  background: radial-gradient(circle at 10% 10%, #0d0d12 0%, #050505 60%), var(--bg);
+  color:#eee;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+
+.container {max-width:1100px;margin:30px auto;padding:20px;}
+
+/* Header */
+.header {
+  display:flex;
+  align-items:center;
+  gap:18px;
+  justify-content:space-between;
+}
+.brand {
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+.brand img.logo {
+  width:72px;height:72px;border-radius:50%;box-shadow:0 6px 24px rgba(198,123,255,0.14);
+  border:2px solid rgba(255,255,255,0.04);
+}
+.brand h1 {
+  font-size:28px;margin:0;letter-spacing:1px;
+  background: linear-gradient(90deg,var(--accent),#d9a0ff);
+  -webkit-background-clip:text;color:transparent;
+  text-shadow:0 2px 18px rgba(198,123,255,0.08);
+}
+.nav {
+  display:flex;
+  gap:12px;
+  align-items:center;
+}
+.nav a {
+  color:var(--muted);text-decoration:none;padding:8px 12px;border-radius:8px;
+}
+.nav a:hover { color: white;background:var(--glass); }
+
+/* Hero */
+.hero {
+  display:flex;
+  gap:20px;
+  align-items:center;
+  margin-top:18px;
+  padding:22px;
+  border-radius:16px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.02);
+}
+.hero .left {flex:1}
+.hero p {color:var(--muted);margin:12px 0 0}
+.cta {
+  display:inline-block;padding:12px 18px;border-radius:10px;background:linear-gradient(90deg,var(--accent),var(--accent-2));
+  color:#061017;font-weight:700;text-decoration:none;margin-top:12px;
+  box-shadow:0 8px 30px rgba(124,89,200,0.18);
+}
+
+/* Product grid */
+.grid {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:18px;
+  margin-top:22px;
+}
+.card {
+  background:var(--card);
+  padding:14px;border-radius:14px;
+  box-shadow:0 8px 24px rgba(0,0,0,0.6);
+  border:1px solid rgba(255,255,255,0.02);
+}
+.card img.product {
+  width:100%;height:170px;object-fit:cover;border-radius:10px;border:1px solid rgba(255,255,255,0.03);
+}
+.card h3 {margin:10px 0 6px}
+.price {font-weight:800;color:var(--accent);margin-right:8px}
+.meta {color:var(--muted);font-size:14px;margin-bottom:10px}
+
+/* Buy button */
+.buy {
+  display:inline-flex;gap:8px;align-items:center;padding:10px 12px;background:linear-gradient(90deg,#ffdb6f,#ffd07b);
+  border-radius:10px;border:0;font-weight:700;cursor:pointer;
+}
+.buy.secondary {background:transparent;color:var(--accent);border:1px solid rgba(250,200,75)}
+
+/* Footer */
+footer {
+  margin-top:30px;padding:18px;border-radius:12px;background:linear-gradient(180deg, rgba(255,255,255,0.01), transparent);
+  display:flex;justify-content:space-between;align-items:center;gap:12px;
+  color:var(--muted);
+}
+.cart {
+  position:fixed;right:18px;bottom:18px;background:linear-gradient(180deg,#0b0b0b,#0f0f12);
+  padding:14px;border-radius:12px;border:1px solid rgba(255,255,255,0.03);
+  width:320px;max-width:90%;box-shadow:0 12px 40px rgba(0,0,0,0.6);display:none;
+}
+.cart h4{margin:0 0 8px}
+.cart .items{max-height:260px;overflow:auto;margin-bottom:8px}
+.notice {font-size:13px;color:var(--muted);}
+
+/* Responsive */
+@media (max-width:720px) { .header {flex-direction:column;align-items:flex-start} .brand h1 {font-size:22px} }
+</style>
+</head>
+<body>
+<div class="container">
+  <header class="header" role="banner">
+    <div class="brand">
+    <img style="width : 50px" src="téléchargement.png" alt="Logo">
+      <div>
+        <h1>EPO CAR</h1>
+        <div style="font-size:13px;color:var(--muted);margin-top:6px">Ventes de voitures sous résine — Décoration & cadeaux</div>
+      </div>
+    </div>
+    <nav class="nav" role="navigation" aria-label="Main">
+      <a href="home.html">Accueil</a>
+      <a href="catalogue.html">Produits</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home" aria-label="Présentation">
+      <div class="left">
+        <h2 style="margin:0">Voitures encapsulées en résine — pièces décoratives uniques</h2>
+        <p>Pièces fixes, design premium, personnalisation possible (couleur, éclairage LED, plaque). Idéal pour collectionneurs, décorateurs et cadeaux originaux.</p>
+        <div style="margin-top:10px">
+          <a class="cta" href="catalogue.html">Voir les produits</a>
+        </div>
+      </div>
+      <div class="right" style="width:320px;text-align:center">
+      <img style="width : 200px" src="téléchargement.png" alt="Logo">
+        <p class="notice">Produits en stock + option personnalisation. Commande sécurisée.</p>
+      </div>
+    </section>
+
+    <section id="products" aria-label="Produits">
+      <h3 style="margin-top:22px">Nos meillieures ventes</h3>
+      <div class="grid">
+        <!-- Product 1 -->
+      <article class="card" data-sku="EPO-01">
+        <img class="product" src="001-1.png" alt="Voiture classique dans résine">
+        <h3>Citroën 2CV miniature sous résine – édition Notre-Dame</h3>
+        <div>
+          <span class="price">15€</span>
+<a href="https://www.vinted.fr/items/7188756456-voiturette-citroen-2cv-sous-resine-edition-notre-dame"
+   style="font-size:12px; color:black; text-decoration:none; background:rgba(250,200,75); padding:4px 8px; border-radius:4px; display:inline-block;">
+  Acheter
+</a>
+
+        </div>
+      </article>
+
+        <!-- Product 2 -->
+      <article class="card" data-sku="EPO-02">
+        <img class="product" src="002-1.jpg" alt="Voiture miniature sous résine">
+        <h3>Honda civic VTEC miniature sous résine</h3>
+        <div>
+          <span class="price">15€</span>
+          <a href="https://www.vinted.fr/items/7189331236-voiturette-honda-civic-vtec-sous-resine"
+   style="font-size:12px; color:black; text-decoration:none; background:rgba(250,200,75); padding:4px 8px; border-radius:4px; display:inline-block;">
+  Acheter
+</a>
+        </div>
+      </article>
+
+        <!-- Product 3 -->
+      <article class="card" data-sku="EPO-03">
+        <img class="product" src="no-img.jpg" alt="Indisponible">
+        <h3>Indisponible</h3>
+        <div>
+          <span class="price">X€</span>
+          <a href=""
+   style="font-size:12px; color:black; text-decoration:none; background:rgba(250,200,75); padding:4px 8px; border-radius:4px; display:inline-block;">
+  Acheter
+</a>
+        </div>
+      </article>
+      </div>
+    </section>
+
+  <footer>
+    <div>© EPO CAR - Tout droits réservés </div>
+    <div style="text-align:right">
+      <div>Livraison & retours inclus</div>
+      <div style="font-size:13px;color:var(--muted)">Paiements sécurisés — Virement / Carte</div>
+    </div>
+  </footer>
+</div>
+<script>
+let cart = [];
+
+function renderCart() {
+  const list = document.getElementById('cartItems');
+  list.innerHTML = '';
+  let total = 0;
+  cart.forEach(it => {
+    total += it.price;
+    const el = document.createElement('div');
+    el.style.padding = '8px 0';
+    el.style.borderBottom = '1px solid rgba(255,255,255,0.03)';
+    el.innerHTML = `<div style="display:flex;justify-content:space-between"><div><strong>${it.title}</strong><div style="font-size:13px;color:var(--muted)">SKU: ${it.sku}</div></div><div style="text-align:right">€${it.price}</div></div>`;
+    list.appendChild(el);
+  });
+  document.getElementById('cartTotal').textContent = '€' + total;
+}
+
+function clearCart(){
+  cart = [];
+  renderCart();
+  document.getElementById('cart').style.display = 'none';
+}
+
+function checkout(){
+  if(cart.length === 0) { alert('Votre panier est vide.'); return; }
+  // simulate checkout
+  const names = cart.map(c => c.title).join(', ');
+  alert('Merci pour votre commande !\nArticles: ' + names + '\nMontant: ' + document.getElementById('cartTotal').textContent);
+  // clear cart on success
+  clearCart();
+}
+
+function openCustomize(sku){
+  const name = document.querySelector(`[data-sku="${sku}"] h3`).innerText;
+  const color = prompt('Personnalisation pour ' + name + '\nIndiquez la couleur souhaitée (ex: rouge, noir, bleu).');
+  if(color) {
+    alert('Merci ! Votre demande de personnalisation pour ' + name + ' (couleur: ' + color + ') a été enregistrée. Nous vous contacterons par mail.');
+  }
+}
+
+// Small accessibility: allow ESC to hide cart
+document.addEventListener('keydown', (e) => {
+  if(e.key === 'Escape') {
+    document.getElementById('cart').style.display = 'none';
+  }
+});
+</script>
+</body>
+</html>

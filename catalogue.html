@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>EPO CAR — Catalogue</title>
+<style>
+:root {
+  --bg: #070707;
+  --card: linear-gradient(180deg,#0b0b0b, #0f0f12);
+  --accent: #c67bff;
+  --accent-2: #7bd3ff;
+  --muted: #aeb0c0;
+  --glass: rgba(255,255,255,0.04);
+}
+* {box-sizing: border-box;}
+body {
+  margin:0;
+  font-family: Inter, "Segoe UI", Roboto, Arial, sans-serif;
+  background: radial-gradient(circle at 10% 10%, #0d0d12 0%, #050505 60%), var(--bg);
+  color:#eee;
+}
+.container {max-width:1200px;margin:30px auto;padding:20px;}
+
+/* Header */
+.header {
+  display:flex;
+  align-items:center;
+  gap:18px;
+  justify-content:space-between;
+}
+.brand {display:flex;align-items:center;gap:12px;}
+.brand img.logo {width:50px}
+.brand h1 {
+  font-size:28px;margin:0;
+  background: linear-gradient(90deg,var(--accent),#d9a0ff);
+  -webkit-background-clip:text;color:transparent;
+}
+.nav {display:flex;gap:12px;}
+.nav a {color:var(--muted);text-decoration:none;padding:8px 12px;border-radius:8px;}
+.nav a:hover { color: white;background:var(--glass); }
+
+/* Catalogue rows */
+.catalogue {margin-top:30px;}
+.row {margin-bottom:40px;}
+.row h2 {margin:0 0 10px;}
+.scroller {
+  display:flex;gap:12px;overflow-x:auto;padding-bottom:8px;
+}
+.card {
+  flex:0 0 200px;
+  background:var(--card);padding:10px;border-radius:10px;
+  box-shadow:0 4px 12px rgba(0,0,0,0.5);
+}
+.card img {width:100%;height:120px;object-fit:cover;border-radius:6px;}
+.card h3 {font-size:15px;margin:6px 0;}
+.price {font-weight:bold;color:var(--accent);}
+.buy {
+  display:inline-block; margin-right:10px;margin-top:6px;padding:6px 10px;
+  background:linear-gradient(90deg,#ffdb6f,#ffd07b);
+  border-radius:8px;font-weight:600;color:#111;cursor:pointer;
+  font-size:13px;
+}
+
+/* Personnalisation & Figurines */
+section.special {margin-top:50px;padding:20px;background:var(--card);border-radius:14px;}
+section.special img {max-width:200px;display:block;margin:auto 0;border-radius:12px;}
+section.special h2 {margin-top:0}
+section.special form input, section.special form textarea {
+  display:block;width:100%;margin:8px 0;padding:10px;
+  border-radius:8px;border:1px solid rgba(255,255,255,0.1);
+  background:transparent;color:#fff;
+}
+
+/* Footer */
+footer {
+  margin-top:30px;padding:18px;border-radius:12px;background:linear-gradient(180deg, rgba(255,255,255,0.01), transparent);
+  display:flex;justify-content:space-between;align-items:center;gap:12px;
+  color:var(--muted);
+}
+</style>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightbox-img');
+
+  document.querySelectorAll('.card img, section.special img').forEach(img => {
+    img.addEventListener('click', () => {
+      lightboxImg.src = img.src;
+      lightbox.style.display = 'flex';
+    });
+  });
+
+  lightbox.addEventListener('click', (e) => {
+    // ferme si on clique sur le fond ou l'image
+    if (e.target === lightbox || e.target === lightboxImg) {
+      lightbox.style.display = 'none';
+    }
+  });
+});
+</script>
+
+</head>
+<body>
+<div class="container">
+  <header class="header">
+    <div class="brand">
+      <img src="téléchargement.png" alt="Logo" class="logo">
+      <h1>EPO CAR</h1>
+    </div>
+    <nav class="nav">
+      <a href="home.html">Accueil</a>
+    </nav>
+  </header>
+
+  <!-- Catalogue -->
+  <main class="catalogue">
+    <div class="row">
+      <h2>Citroën</h2>
+      <div class="scroller">
+        <div class="card">
+          <img src="001-1.png" alt="">
+          <h3>Citroën 2CV miniature sous résine – édition Notre-Dame</h3>
+          <div class="price">
+          <a href="https://www.vinted.fr/items/7188756456-voiturette-citroen-2cv-sous-resine-edition-notre-dame"
+   style="font-size:12px; color:black; text-decoration:none; background:rgba(250,200,75); padding:4px 8px; border-radius:4px; display:inline-block; margin-right:10px;">
+  Acheter
+</a>15€</div>
+      </div>
+    </div>
+
+    <div class="row">
+      <h2>Honda</h2>
+      <div class="scroller">
+        <div class="card"><img src="002-1.jpg"><h3>Honda civic VTEC miniature sous résine</h3><div class="price">
+            <a href="https://www.vinted.fr/items/7189331236-voiturette-honda-civic-vtec-sous-resine"
+   style="font-size:12px; color:black; text-decoration:none; background:rgba(250,200,75); padding:4px 8px; border-radius:4px; display:inline-block; margin-right:10px;">
+  Acheter
+</a>15€</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <h2>Catégorie indisponible</h2>
+      <div class="scroller">
+        <div class="card"><img src="no-img.jpg"><h3>Indisponible</h3><div class="price">
+            <a href=""
+   style="font-size:12px; color:black; text-decoration:none; background:rgba(250,200,75); padding:4px 8px; border-radius:4px; display:inline-block; margin-right:10px; margin-right:10px;">
+  Acheter
+</a>X€</div>
+        </div>
+      </div>
+    </div>
+
+  <!-- Personnalisation -->
+  <section class="special" id="custom">
+    <h2>Personnalisation sur mesure <span class="price">Prix variable</span></h2>
+    <div style="display:flex;gap:20px;flex-wrap:wrap;align-items:center">
+      <img src="perso.png" alt="Personnalisation">
+      <div style="flex:1">
+        <p>Envoyez-nous votre modèle ou un lien d’achat, nous l’encapsulons dans la résine avec vos options (LED, décor, plaque personnalisée).</p>
+        <form onsubmit="event.preventDefault(); alert('Demande envoyée !');">
+          <input type="text" placeholder="Nom ou lien du modèle" required>
+          <textarea placeholder="Détails (LED, décor, plaque...)" required></textarea>
+          <textarea placeholder="E-mail ou téléphone pour le devis (obligatoire)" required></textarea>
+          <button type="submit" class="buy">Envoyer la demande</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Figurines LEGO -->
+<section class="special" id="lego">
+  <h2>Figurines LEGO   <span class="price" style="font-size = 100px">15 €</span></h2>
+  <p>
+    Créez votre propre figurine sur le site officiel
+    <a href="https://www.lego.com/fr-ca/minifigure-factory" target="_blank" style="color:var(--accent)">LEGO Minifigure Factory</a>,
+    puis déposez ici une photo de votre création pour la faire encapsuler en résine.
+  </p>
+  <form onsubmit="event.preventDefault(); alert('Merci ! Votre demande de figurine LEGO a été envoyée.');">
+    <input type="text" name="name" placeholder="Détails sur la figurine (nom, position, action...)" required
+           style="margin:8px 0;padding:10px;width:100%;border-radius:8px;border:1px solid rgba(255,255,255,0.1);background:transparent;color:#fff">
+    <input type="file" name="photo" accept="image/*" required
+           style="margin:8px 0;padding:10px;width:100%;border-radius:8px;border:1px solid rgba(255,255,255,0.1);background:transparent;color:#fff">
+    <button type="submit" class="buy">Envoyer la demande</button>
+  </form>
+</section>
+
+
+  <footer>
+    <div>© EPO CAR - Tout droits réservés </div>
+    <div style="text-align:right">
+      <div>Livraison & retours inclus</div>
+      <div style="font-size:13px;color:var(--muted)">Paiements sécurisés — Virement / Carte</div>
+    </div>
+  </footer>
+</div>
+      <!-- Lightbox -->
+<div id="lightbox" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;
+     background:rgba(0,0,0,0.8);align-items:center;justify-content:center;
+     z-index:1000;cursor:pointer;">
+  <img id="lightbox-img" src="" alt=""
+       style="max-width:90%;max-height:90%;border-radius:12px;box-shadow:0 4px 20px rgba(0,0,0,0.7);">
+</div>
+
+
+</body>
+</html>
